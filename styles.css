@@ -1,4 +1,19 @@
-/* Reset e configurações básicas */
+
+@font-face {
+    font-family: 'MinhaFonteItalic';
+    src: url('Inter-4.1/InterVariable-Italic.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('Inter-4.1/InterVariable.ttf') format('truetype');
+    font-weight: 700;
+}
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +25,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'MinhaFonte', sans-serif;
     line-height: 1.6;
     color: #000000;
     overflow-x: hidden;
@@ -27,7 +42,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(26, 26, 26, 0.95);
+    background: rgba(0, 0, 0, 0);
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;
@@ -86,6 +101,24 @@ body {
     width: 100%;
 }
 
+
+.logo {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -103,7 +136,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('barbershop_interior.png');
+    background: linear-gradient(rgb(0, 0, 0), rgba(62, 62, 62, 0.621)), url('barbershop_interior.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -131,7 +164,6 @@ body {
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -167,7 +199,7 @@ body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     color: #d4af37;
@@ -189,10 +221,10 @@ body {
 }
 
 .about-text h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     color: #1a1a1a;
     margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .about-text p {
@@ -252,7 +284,6 @@ body {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 4rem;
@@ -489,7 +520,6 @@ body {
     color: #1a1a1a;
     margin-bottom: 30px;
     font-size: 1.5rem;
-    font-family: 'Playfair Display', serif;
 }
 
 .contact-form input,

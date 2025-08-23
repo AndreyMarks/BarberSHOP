@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gonzaga Barber - Transforme seu visual com estilo.</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
@@ -20,6 +19,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
+                    <img src="uploads/Logo.png">
                     <h2>Barbearia Gonzaga</h2>
                 </div>
                 <ul class="nav-menu">
@@ -230,68 +230,90 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Onde nos encontrar</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Endereço</h3>
-                            <p>R. Boa Vista, 365 - Sítio São Francisco, Guarulhos - SP, 07261-490<br>Guarulhos, SP</p>
-                        </div>
+    <!-- Contact Section --><section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Onde nos encontrar</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Telefone</h3>
-                            <p>(11) 99534-0115</p>
-                        </div>
+                    <div>
+                        <h3>Endereço</h3>
+                        <p>R. Boa Vista, 365 - Sítio São Francisco, Guarulhos - SP, 07261-490<br>Guarulhos, SP</p>
                     </div>
-
-                   <br>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h3>Horários</h3>
-                            <p>Segunda a Sexta: 9h às 19h<br>Sábado: 8h às 17h<br>Domingo: Fechado</p>
-                        </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Telefone</h3>
+                        <p>(11) 99534-0115</p>
                     </div>
                 </div>
 
-                
-                <div class="contact-form">
-                    <h3>Agende seu horário</h3>
-
-                    <p>Agende direto pelo app: <a href="https://sites.appbarber.com.br/barbeariagonzag-xtdb?fbclid=PAZXh0bgNhZW0CMTEAAafZpHoDjxMRFQF0zc8FPhmM0nj2e33ILRt8k5jhWGfwk9J2hho_7Al_Vq315A_aem_eHcL2z43jsUXW5frYzw7MA">clicando aqui!</a> </p><br>
-
-                    <p>Ou entraremos em contato com você!</p>
-
-                    <form>
-                        <input type="text" placeholder="Seu nome" required>
-                        <input type="tel" placeholder="Seu telefone" required>
-                        <select required>
-                            <option value="">Escolha o serviço</option>
-                            <option value="corte">Corte Tradicional</option>
-                            <option value="corte-barba">Corte + Barba</option>
-                            <option value="tratamento">Tratamento Capilar</option>
-                            <option value="infantil">Corte Infantil</option>
-                        </select>
-                        <textarea placeholder="Observações (opcional)"></textarea>
-                        <button type="submit" class="submit-btn">Agendar Agora</button>
-                    </form>
+                <br>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3>Horários</h3>
+                        <p>Segunda a Sexta: 9h às 19h<br>Sábado: 8h às 17h<br>Domingo: Fechado</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="contact-form">
+                <p>AGENDE DIRETO PELO APP: 
+                    <a href="https://sites.appbarber.com.br/barbeariagonzag-xtdb" target="_blank">
+                        clicando aqui!
+                    </a>
+                </p><br>
+
+                <p>Ou nos envie mensagem pelo Whatsapp!</p>
+                <br>
+
+                <!-- Adicionei IDs -->
+                <form id="whatsapp-form">
+                    <input type="text" id="nome" placeholder="Seu nome" required>
+                    <select id="servico" required>
+                        <option value="">Escolha o serviço</option>
+                        <option value="Corte Tradicional">Corte Tradicional</option>
+                        <option value="Corte + Barba">Corte + Barba</option>
+                        <option value="Tratamento Capilar">Tratamento Capilar</option>
+                        <option value="Corte Infantil">Corte Infantil</option>
+                    </select>
+                    <button type="submit" class="submit-btn">Agendar Agora</button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    document.getElementById("whatsapp-form").addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const servico = document.getElementById("servico").value;
+
+        // Número do WhatsApp (com DDI + DDD)
+        const telefone = "5511995340115";
+
+        // Mensagem personalizada
+        const mensagem = `Olá, me chamo ${nome}. Quero agendar um ${servico} com você!`;
+
+        // Monta o link do WhatsApp
+        const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+
+        // Abre o WhatsApp
+        window.open(url, "_blank");
+    });
+</script>
+
 
     <!-- Footer -->
     <footer class="footer">
