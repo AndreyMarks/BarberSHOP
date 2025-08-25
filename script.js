@@ -1,4 +1,3 @@
-// Menu Mobile Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -7,7 +6,6 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Fechar menu ao clicar em um link
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -15,19 +13,17 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(0, 0, 0, 0.98)';
+        header.style.background = 'rgba(26, 26, 26, 0.98)';
         header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
     } else {
-        header.style.background = 'rgba(26, 26, 26, 0)';
+        header.style.background = 'rgba(26, 26, 26, 0.95)';
         header.style.boxShadow = 'none';
     }
 });
 
-// Smooth scrolling fallback para navegadores antigos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -41,7 +37,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Animação de números nas estatísticas
 const animateNumbers = () => {
     const stats = document.querySelectorAll('.stat-number');
     
@@ -60,7 +55,6 @@ const animateNumbers = () => {
     });
 };
 
-// Intersection Observer para animações (scroll reveal)
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -72,7 +66,6 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
             
-            // Animar números quando a seção about aparecer
             if (entry.target.classList.contains('about')) {
                 setTimeout(animateNumbers, 500);
             }
@@ -80,7 +73,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observar elementos para animação (scroll reveal aplicado)
 document.querySelectorAll('.service-card, .testimonial-card, .gallery-item, .about, .contact-form, .hero, .stat-number').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(40px)';
@@ -88,12 +80,10 @@ document.querySelectorAll('.service-card, .testimonial-card, .gallery-item, .abo
     observer.observe(el);
 });
 
-// Formulário de contato
 const contactForm = document.querySelector('.contact-form form');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Simular envio do formulário
     const submitBtn = contactForm.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
     
@@ -101,7 +91,7 @@ contactForm.addEventListener('submit', (e) => {
     submitBtn.disabled = true;
     
     setTimeout(() => {
-        submitBtn.textContent = 'Agendamento Enviado!';
+        submitBtn.textContent = 'Contato Enviado!';
         submitBtn.style.background = '#28a745';
         
         setTimeout(() => {
@@ -113,7 +103,6 @@ contactForm.addEventListener('submit', (e) => {
     }, 2000);
 });
 
-// Parallax effect para hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
@@ -124,7 +113,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Lazy loading para imagens
 const images = document.querySelectorAll('img');
 const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -146,7 +134,6 @@ images.forEach(img => {
     img.style.transition = 'opacity 0.3s ease';
 });
 
-// Efeito de hover nos cards de serviço
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-10px) scale(1.02)';
@@ -157,7 +144,6 @@ document.querySelectorAll('.service-card').forEach(card => {
     });
 });
 
-// Scroll indicator
 const scrollIndicator = document.querySelector('.scroll-indicator');
 if (scrollIndicator) {
     scrollIndicator.addEventListener('click', () => {
@@ -167,7 +153,6 @@ if (scrollIndicator) {
     });
 }
 
-// Adicionar efeito de typing ao título principal
 const heroTitle = document.querySelector('.hero-title');
 if (heroTitle) {
     const text = heroTitle.textContent;
@@ -182,11 +167,9 @@ if (heroTitle) {
         }
     };
     
-    // Iniciar o efeito após um pequeno delay
     setTimeout(typeWriter, 1000);
 }
 
-// Adicionar efeito de partículas no background
 const createParticles = () => {
     const hero = document.querySelector('.hero');
     const particlesContainer = document.createElement('div');
@@ -235,10 +218,9 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Inicializar partículas
 createParticles();
 
-// Loader
+// 
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
     
@@ -251,7 +233,6 @@ window.addEventListener('load', () => {
     }
 });
 
-// Cursor personalizado
 const cursor = document.createElement('div');
 cursor.className = 'custom-cursor';
 cursor.style.cssText = `
@@ -282,7 +263,6 @@ if (window.innerWidth > 768) {
     });
 }
 
-// Autoplay do vídeo na seção about
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.querySelector(".about-video video");
     const aboutSection = document.getElementById("about");
